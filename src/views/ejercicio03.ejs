@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <%- include('partials/head') %>
+</head>
+
+<body>
+  <%- include('partials/navigation') %>
+    <main>
+      <div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom">Ejercicio 03</h2>
+        <div>
+          <form action="/numeroimpar" method="post">
+            <div class="mb-12">
+              <label for="exampleInputEmail1" class="form-label">Número</label>
+              <input type="number" class="form-control" id="number" name="number">
+              <div id="emailHelp" class="form-text text-danger">* Recuerda ingresar número Impar</div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+            <a href="/ejercicio03" class="btn btn-warning">Limpiar</a>
+          </form>
+        </div>
+        <br>
+        <p> <b>RESULTADOS: </b></p>
+        <br>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center" scope="col">Lista de Numeros Impares</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%  numbers.forEach((number) => { %>
+              <tr>
+                <td class="text-center" scope="row"><%= number %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+</body>
+
+</html>

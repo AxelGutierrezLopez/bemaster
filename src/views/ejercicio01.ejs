@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <%- include('partials/head') %>
+</head>
+
+<body>
+  <%- include('partials/navigation') %>
+    <main>
+      <div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom">Ejercicio 01</h2>
+        <p> <b>* Usuario de Github: </b>Google</p>
+        <p> <b>* Descendente la lista: </b> Mayor cantidad de <b>pushed</b></p>
+        <br>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center" scope="col">#</th>
+              <th class="text-center" scope="col">Id</th>
+              <th class="text-center" scope="col">Name</th>
+              <th class="text-center" scope="col">Full Name</th>
+              <th scope="col">GitHub</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% repos.forEach((repo) => { %>
+              
+              <tr>
+                <th class="text-center" scope="row"><%= repo.num %></th>
+                <td class="text-center"><%= repo.id %></td>
+                <td class="text-center"><%= repo.name %> </td>
+                <td class="text-center" ><%= repo.full_name %> </td>
+                <td><a href="<%= repo.html_url %>"><%= repo.html_url %></a></td>
+              </tr>
+
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+</body>
+
+</html>
